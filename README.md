@@ -9,3 +9,4 @@ For the sake of this application, let me propose that this application works in 
  The second part is quite straightforward and let us pair up the Secret Santa with its beneficiary!
 
  To get technical lets explain which file does what:
+ The first thing that I created was the database (database.db)
