@@ -10,11 +10,17 @@ For the sake of this application, let me propose that this application works in 
 
  To get technical lets explain which file does what:
  The first thing that I created was the database (database.db) using sqlite3 after setting it up on my visual studio code. Using a sql file and the extension from visual studio code, I started initializing a table with this command:
+ 
   "CREATE TABLE users(
+  
                     user_id INTEGER NOT NULL AUTOINCREMENT PRIMARY KEY,
+                    
                     name TEXT NOT NULL,
+                    
                     preferences TEXT NOT NULL,
+                    
                     budget INTEGER NOT NULL);
+                    
 
 The entire idea of the application can be seen inside what I just created: The primary key is the user id which will start at 1 and going up the more users will join the secret santa. I will leverage this to actually pair up the couples. The name is a text representing the human itself and to distinguish it from others. We dont add edge cases like equals name and we will ask the user for a name and a surname. Is based on an honor system since the scope of the project is to be used on a local level only. If we were to create a web app based on this we should be adding a "surname" row. Preferences, again, is self-explanatory and indicates what topic the gift should cover. Budget is for some future implementations based on how much money should be spent for the present. It will be global for everyone so no need for a user input (Even though I would like a Tesla myself for my secret santa)
 
