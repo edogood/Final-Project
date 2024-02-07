@@ -46,5 +46,10 @@ while True:
     #Select the database only by names and check if the number of names is odd or even. If the number of names is odd, pick a random name and give it the title of SUPER SECRET SANTA
     #Super Secret Santa receive a special prize from the whole office                        
     if action == "S":
-
-                
+        user_count = cursor.execute("SELECT SUM(name) from users")[0]
+        if odd(user_count):
+            winner = random.choice(user_count)
+            print(f"The Super Santa is {winner}")
+            counted = []
+            counted.append(winner)
+            print("counted")
