@@ -1,6 +1,8 @@
-Secret Santa Application!
-
-Description: For those unfamiliar with the term 'Secret Santa': This tradition involves giving a random person a gift during the Christmas period. The recipient won't know the name of their gift-giver (hence the name Secret Santa!) until they receive their gift! The nature of the gifts is usually symbolic, not particularly expensive, and should aim to reflect what the recipient loves (e.g., hobbies, TV series, pets, etc.). The tradition is divided into two parts: putting your name in a bowl and picking from it to see whose present you will buy, and the exchange of gifts, which is somewhat self-explanatory.
+# Secret Santa
+#### Video Demo:  <URL HERE>
+#### Description:
+![Secret Santa](https://img.freepik.com/free-vector/hand-drawn-secret-santa-illustration_23-2149162315.jpg)
+For those unfamiliar with the term 'Secret Santa': This tradition involves giving a random person a gift during the Christmas period. The recipient won't know the name of their gift-giver (hence the name Secret Santa!) until they receive their gift! The nature of the gifts is usually symbolic, not particularly expensive, and should aim to reflect what the recipient loves (e.g., hobbies, TV series, pets, etc.). The tradition is divided into two parts: putting your name in a bowl and picking from it to see whose present you will buy, and the exchange of gifts, which is somewhat self-explanatory.
 
 For the sake of this application, let me propose that it works in two different .py files:
 
