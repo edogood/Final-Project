@@ -65,7 +65,7 @@ while True:
                     secret_santas[person[0]] = secret_santa
                     print(f"{person[0]} is the Secret Santa of {secret_santa}!")
     end = input("Secret Santas are assigned! Do you want to close the application? (Y/N)").upper()
-    if input == "Y":
+    if end == "Y":
         break
 
 
