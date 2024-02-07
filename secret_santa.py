@@ -8,7 +8,7 @@ def odd(number):
     return number % 2 != 0
 
 #Ask to input name, if already in database ask if it wants to update or delete
-print("Made By Edoardo Buono as CS50 Final Project Class of '24")
+print("Made By e-buono as CS50 Final Project Class of '24")
 while True:
     #Open the database and select a variable named users.
     
