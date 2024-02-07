@@ -3,8 +3,6 @@ import sqlite3
 import random
 connection = sqlite3.connect("secretsanta.db")
 
-def even(number):
-    return number % 2 == 0
 
 def odd(number):
     return number % 2 != 0
@@ -46,10 +44,29 @@ while True:
     #Select the database only by names and check if the number of names is odd or even. If the number of names is odd, pick a random name and give it the title of SUPER SECRET SANTA
     #Super Secret Santa receive a special prize from the whole office                        
     if action == "S":
-        user_count = cursor.execute("SELECT SUM(name) from users")[0]
-        if odd(user_count):
-            winner = random.choice(user_count)
-            print(f"The Super Santa is {winner}")
-            counted = []
-            counted.append(winner)
-            print("counted")
+        cursor.execute("SELECT COUNT(name) from users")
+        row = cursor.fetchone()
+        if row:
+            count = row[0]
+            if odd(count):
+                cursor.execute("SELECT name from users")
+                rows = cursor.fetchall()
+                winner = random.choice(rows)[0]
+                print(f"Randomly selected Super Secret Santa is: {winner}")
+                counted = [winner]
+            else: #if the number is even
+                #Get all the names from the database
+                cursor.execute("SELECT name from users")
+                people = cursor.fetchall()
+                random.shuffle(people) #shuffle the list
+                secret_santas = {}
+                for key, person in enumerate(people):
+                    secret_santa = people[(key + 1) % count ][0]
+                    secret_santas[person[0]] = secret_santa
+                    print(f"{person[0]} is the Secret Santa of {secret_santa}!")
+    end = input("Secret Santas are assigned! Do you want to close the application? (Y/N)").upper()
+    if input == "Y":
+        break
+
+
+                
