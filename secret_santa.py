@@ -48,12 +48,12 @@ while True:
         row = cursor.fetchone()
         if row:
             count = row[0]
-            while odd(count):
+            if odd(count):
                 cursor.execute("SELECT name from users")
                 rows = cursor.fetchall()
                 winner = random.choice(rows)[0]
                 print(f"Randomly selected Super Secret Santa is: {winner}")
-                counted = [winner]
+                count += 1
             else: #if the number is even
                 #Get all the names from the database
                 cursor.execute("SELECT name from users")
