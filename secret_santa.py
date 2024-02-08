@@ -3,12 +3,11 @@ import sqlite3
 import random
 connection = sqlite3.connect("secretsanta.db")
 
-
 def odd(number):
     return number % 2 != 0
 
 #Ask to input name, if already in database ask if it wants to update or delete
-print("Made By e-buono as CS50 Final Project Class of '24")
+print("Made By Edoardo Buono as CS50 Final Project Class of '24")
 while True:
     #Open the database and select a variable named users.
     
@@ -48,7 +47,7 @@ while True:
         row = cursor.fetchone()
         if row:
             count = row[0]
-            if odd(count):
+            while odd(count):
                 cursor.execute("SELECT name from users")
                 rows = cursor.fetchall()
                 winner = random.choice(rows)[0]
@@ -61,12 +60,17 @@ while True:
                 random.shuffle(people) #shuffle the list
                 secret_santas = {}
                 for key, person in enumerate(people):
-                    secret_santa = people[(key + 1) % count ][0]
-                    secret_santas[person[0]] = secret_santa
-                    print(f"{person[0]} is the Secret Santa of {secret_santa}!")
+                    if people[key] == winner:
+                        continue
+                    else:
+                        secret_santa = people[(key + 1) % len(people) ][0]
+                        secret_santas[person[0]] = secret_santa
+                        print(f"{person[0]} is the Secret Santa of {secret_santa}!")
     end = input("Secret Santas are assigned! Do you want to close the application? (Y/N)").upper()
     if end == "Y":
         break
+    else:
+         input("Press Any Key to restart.")
 
 
                 
