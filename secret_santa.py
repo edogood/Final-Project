@@ -48,7 +48,7 @@ while True:
         row = cursor.fetchone()
         if row:
             count = row[0]
-            if odd(count):
+            while odd(count):
                 cursor.execute("SELECT name from users")
                 rows = cursor.fetchall()
                 winner = random.choice(rows)[0]
