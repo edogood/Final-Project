@@ -45,6 +45,7 @@ while True:
     if action == "S":
         cursor.execute("SELECT COUNT(name) from users")
         row = cursor.fetchone()
+        winner=""
         if row:
             count = row[0]
             while odd(count):
